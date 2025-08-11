@@ -1,0 +1,9 @@
+numpy
+pandas
+matplotlib
+mt5linux
+python-dateutil
+
+# The MetaTrader5 package itself is installed on the Windows host.  
+# In this container we connect via the mt5linux bridge, so the
+# MetaTrader5 Python package is not installed here.

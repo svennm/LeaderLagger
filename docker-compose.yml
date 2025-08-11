@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  trader:
+    build: .
+    container_name: mt5-corr-bot
+    environment:
+      # Hostname and port of the Windows MT5 bridge.  On Windows and macOS
+      # Docker installations ``host.docker.internal`` resolves to the
+      # host OS.  Adjust these if you run Linux containers differently.
+      MT5_HOST: ${MT5_HOST:-host.docker.internal}
+      MT5_PORT: ${MT5_PORT:-18812}
+    volumes:
+      - ./signals:/app/signals
+    # Remove container when it exits
+    restart: "no"
